@@ -1,0 +1,32 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f4f1ea;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+main {
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+input {
+  font-size: 1.2rem;
+  width: 100px;
+  padding: 6px;
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+#message {
+  font-size: 1.3rem;
+  font-weight: bold;
+  min-height: 1.6em;
+}
