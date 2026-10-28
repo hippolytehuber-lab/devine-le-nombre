@@ -1,12 +1,14 @@
 // Le nombre secret, choisi au hasard entre 1 et 100
 let secret = Math.floor(Math.random() * 100) + 1;
 let essais = 0;
+let meilleurScore = null;
 
 const formulaire = document.getElementById("formulaire");
 const champ = document.getElementById("essai");
 const message = document.getElementById("message");
 const compteur = document.getElementById("compteur");
 const rejouer = document.getElementById("rejouer");
+const record = document.getElementById("record");
 
 formulaire.addEventListener("submit", (evenement) => {
   evenement.preventDefault();
@@ -20,6 +22,11 @@ formulaire.addEventListener("submit", (evenement) => {
     message.textContent = `${nombre} : c'est moins !`;
   } else {
     message.textContent = `Bravo, c'était ${secret} ! Trouvé en ${essais} essais.`;
+    // On garde le plus petit nombre d'essais
+    if (meilleurScore === null || essais < meilleurScore) {
+      meilleurScore = essais;
+      record.textContent = `Meilleur score : ${meilleurScore} essais`;
+    }
     champ.disabled = true;
     rejouer.hidden = false;
   }
